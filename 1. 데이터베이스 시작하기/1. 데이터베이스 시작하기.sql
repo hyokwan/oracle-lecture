@@ -9,6 +9,7 @@ def ....
 --외부수정
 --test222
 --test333
+--hk revision in local
 CREATE TABLESPACE       TS_USER01
    DATAFILE 'C:\ORACLE\DATA\TS_USER_01.dbf' SIZE 1024M
    AUTOEXTEND ON NEXT 100M MAXSIZE UNLIMITED
