@@ -1,40 +1,41 @@
 ---------------------------------
--- 1. Å×ÀÌºí ½ºÆäÀÌ½º (* DBA »ç¿ëÀÚ Á¤º¸·Î ·Î±×ÀÎ) ¿¹: SYSTEM OR SYS
+-- 1. í…Œì´ë¸” ìŠ¤íŽ˜ì´ìŠ¤ (* DBA ì‚¬ìš©ìž ì •ë³´ë¡œ ë¡œê·¸ì¸) ì˜ˆ: SYSTEM OR SYS
 ---------------------------------
--- Å×ÀÌºí ½ºÆäÀÌ½º »ý¼º
+-- í…Œì´ë¸” ìŠ¤íŽ˜ì´ìŠ¤ ìƒì„±
+--ì™¸ë¶€ìˆ˜ì •
 CREATE TABLESPACE       TS_USER01
    DATAFILE 'C:\ORACLE\DATA\TS_USER_01.dbf' SIZE 1024M
    AUTOEXTEND ON NEXT 100M MAXSIZE UNLIMITED
    SEGMENT SPACE MANAGEMENT AUTO;
    
--- Å×ÀÌºí ½ºÆäÀÌ½º »èÁ¦
+-- í…Œì´ë¸” ìŠ¤íŽ˜ì´ìŠ¤ ì‚­ì œ
 DROP TABLESPACE       TS_USER01
    INCLUDING CONTENTS AND DATAFILES CASCADE CONSTRAINTS;
 ---------------------------------
--- 2. »ç¿ëÀÚ
+-- 2. ì‚¬ìš©ìž
 ---------------------------------   
--- »ç¿ëÀÚ »ý¼º
+-- ì‚¬ìš©ìž ìƒì„±
 CREATE USER HAITEAM
                   IDENTIFIED BY        HAITEAM
                   DEFAULT TABLESPACE   TS_USER01
                   TEMPORARY TABLESPACE TEMP;
 
--- »ç¿ëÀÚ ±âº»Á¤º¸ º¯°æ º¯°æ
+-- ì‚¬ìš©ìž ê¸°ë³¸ì •ë³´ ë³€ê²½ ë³€ê²½
 ALTER USER HAITEAM
    IDENTIFIED BY HAITEAM2;
    -- ACCOUNT LOCK/UNLOCK
    
--- »ç¿ëÀÚ Å×ÀÌºí ½ºÆäÀÌ½º º¯°æ
+-- ì‚¬ìš©ìž í…Œì´ë¸” ìŠ¤íŽ˜ì´ìŠ¤ ë³€ê²½
 ALTER USER HAITEAM
     DEFAULT TABLESPACE USERS;
     
 ---------------------------------
--- 3. »ç¿ëÀÚ ±ÇÇÑ
+-- 3. ì‚¬ìš©ìž ê¶Œí•œ
 ---------------------------------  
--- »ç¿ëÀÚ ±ÇÇÑ »ý¼º (Á¢¼Ó/¸®¼Ò½º ¹× Å×ÀÌºí »ý¼º)
+-- ì‚¬ìš©ìž ê¶Œí•œ ìƒì„± (ì ‘ì†/ë¦¬ì†ŒìŠ¤ ë° í…Œì´ë¸” ìƒì„±)
 GRANT CONNECT, RESOURCE, DBA TO HAITEAM;
 
--- »ç¿ëÀÚ ±ÇÇÑ È¸¼ö (Á¢¼Ó/¸®¼Ò½º ¹× Å×ÀÌºí »ý¼º)
+-- ì‚¬ìš©ìž ê¶Œí•œ íšŒìˆ˜ (ì ‘ì†/ë¦¬ì†ŒìŠ¤ ë° í…Œì´ë¸” ìƒì„±)
 REVOKE DBA FROM HAITEAM;
 
 
@@ -80,10 +81,10 @@ AND REGIONID = 'A43'
 SELECT * FROM KOPO_CHANNEL_SEASONALITY_NEW
 
 ---------------------------------
--- 4. »ùÇÃ Å×ÀÌºí »ý¼º (* »ý¼ºÇÑ »ç¿ëÀÚ Á¤º¸·Î ·Î±×ÀÎ)
+-- 4. ìƒ˜í”Œ í…Œì´ë¸” ìƒì„± (* ìƒì„±í•œ ì‚¬ìš©ìž ì •ë³´ë¡œ ë¡œê·¸ì¸)
 ---------------------------------  
--- »ç¿ëÀÚ Á¤º¸·Î Á¢¼Ó ¹×
--- »ùÇÃ Å×ÀÌºí »ý¼º
+-- ì‚¬ìš©ìž ì •ë³´ë¡œ ì ‘ì† ë°
+-- ìƒ˜í”Œ í…Œì´ë¸” ìƒì„±
 CREATE TABLE KOPO_PRODUCT_VOLUME
 (
   REGIONID          VARCHAR2(20),
@@ -92,6 +93,6 @@ CREATE TABLE KOPO_PRODUCT_VOLUME
   VOLUME            NUMBER
 );
 
--- Å×ÀÌºí ¸ñ·Ï Á¶È¸
+-- í…Œì´ë¸” ëª©ë¡ ì¡°íšŒ
 SELECT * FROM TABS;
 
