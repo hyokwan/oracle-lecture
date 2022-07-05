@@ -1,4 +1,7 @@
--- extern funtion added
+-- extern funtion adde
+-- function create by jong
+-- def.....cretea{
+
 def ....
 
 
