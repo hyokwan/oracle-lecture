@@ -3,6 +3,7 @@
 ---------------------------------
 -- 테이블 스페이스 생성
 --외부수정
+--test222
 CREATE TABLESPACE       TS_USER01
    DATAFILE 'C:\ORACLE\DATA\TS_USER_01.dbf' SIZE 1024M
    AUTOEXTEND ON NEXT 100M MAXSIZE UNLIMITED
